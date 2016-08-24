@@ -1,0 +1,7 @@
+{
+  "extends": "idiomatic",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  }
+}
