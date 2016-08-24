@@ -1,4 +1,7 @@
+//@flow
+
+const test: string = 'hi';
 
 export default {
-  hello: 'world'
+  hello: 'world ' + test
 };

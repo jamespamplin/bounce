@@ -1,3 +1,4 @@
+import flow from 'rollup-plugin-flow';
 import babel from 'rollup-plugin-babel';
 
 export default {
@@ -6,5 +7,5 @@ export default {
   format: 'umd',
   moduleName: 'app',
   sourceMap: true,
-  plugins: [ babel() ]
+  plugins: [ flow(), babel() ]
 };
