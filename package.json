@@ -1,0 +1,15 @@
+{
+  "name": "bounce",
+  "version": "0.1.0",
+  "description": "Bouncing a ball",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "author": "James Pamplin <james@jamespamplin.com>",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

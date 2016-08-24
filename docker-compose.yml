@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    image: mhart/alpine-node:6
+    command: npm start
+    ports:
+      - "8080"
+    volumes:
+      - .:/bounce
+      - ~/.npm:/root/.npm
+    working_dir: /bounce
