@@ -3,9 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Bounce</title>
+    <link rel="stylesheet" href="src/app.css" media="all"/>
   </head>
   <body>
-    <h1>Bounce</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" id="world" class="world-view" viewBox="0 0 1000 1000"></svg>
     <script src="dist/app.js"></script>
+    <script>
+      app.initialise( document.getElementById( 'world' ) );
+    </script>
   </body>
 </html>
