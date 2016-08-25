@@ -4,7 +4,7 @@
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
 // Hardcoded radius for now
-const defaultRadius = 10;
+const defaultRadius = 6;
 
 declare class SVGLength {
   value: number;
@@ -24,10 +24,14 @@ declare class SVGCircleElement extends Element {
 export class Ball {
   elem: SVGCircleElement;
   stopped: boolean;
+  currentTime: number;
+  initialCoords: [ number, number ];
 
   constructor( x: number, y: number ) {
     this.elem = makeCircle( x, y, defaultRadius );
     this.stopped = false;
+    this.currentTime = 0;
+    this.initialCoords = [ x, y ];
   }
 
   isMoving() {
@@ -42,21 +46,45 @@ export class Ball {
   }
 
   move() {
-    const [ cx, cy ] = this.getCoords();
-    const velocity = 10;
-    const maxY = 400;
+    this.currentTime += 1;
 
-    if ( cy + velocity >= maxY ) {
-      this.moveTo( cx + velocity, maxY );
-      this.stopped = true;
-    } else {
-      this.moveTo( cx + velocity, cy + velocity );
-    }
+    const velocity = 50;
+    const [ initialX, initialY ] = this.initialCoords;
+    const [ x, y ] = calcPosition( 0, 0, velocity, this.currentTime );
+
+    this.moveTo( initialX + x, initialY - y );
   }
 
   moveTo( cx: number, cy: number ) {
     setCirclePosition( this.elem, cx, cy );
   }
+}
+
+
+/**
+ * Calculate position of ball at a given time, based on starting velocity.
+ *
+ * Formulas from: http://entertainment.howstuffworks.com/physics-of-football2.htm
+ *
+ * @param initialX: starting X coord
+ * @param initialY: starting Y coord
+ * @param v: velocity
+ * @param t: current time
+ * @returns tuple of [ x, y ] coord
+ */
+function calcPosition( initialX: number, initialY: number, v: number, t: number ): [ number, number ] {
+  // Math.cos and Math.sin require angle in radians
+  const angle = degreesToRadians( 80 ),
+    vx = v * Math.cos( angle ),
+    vy = v * Math.sin( angle ),
+    x = vx * t,
+    y = vy * t - 0.5 * 9.8 * t * t
+
+  return [ x, y ];
+}
+
+function degreesToRadians( angle ) {
+  return angle * ( Math.PI / 180 );
 }
 
 

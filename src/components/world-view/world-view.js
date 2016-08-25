@@ -16,7 +16,7 @@ export class WorldView {
 
     elem.addEventListener( 'click', clickHandler );
 
-    window.setInterval( this.moveBalls.bind( this ), 100 );
+    window.setInterval( this.moveBalls.bind( this ), 200 );
   }
 
   addBall( x: number, y: number ) {
