@@ -1,3 +1,10 @@
 .world-view {
   background-color: #fcfcfc;
+  width: 1000px;
+  height: 400px;
+  border: 1px solid #000;
+}
+
+.ball {
+  transition: all 0.1s linear;
 }

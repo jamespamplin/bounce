@@ -1,4 +1,5 @@
 //@flow
+/*global window*/
 
 import { Ball } from '../ball/ball.js';
 
@@ -14,6 +15,8 @@ export class WorldView {
     const clickHandler: EventHandler = this.worldClicked.bind( this );
 
     elem.addEventListener( 'click', clickHandler );
+
+    window.setInterval( this.moveBalls.bind( this ), 100 );
   }
 
   addBall( x: number, y: number ) {
@@ -25,5 +28,11 @@ export class WorldView {
   worldClicked( event: MouseEvent ) {
     const { offsetX, offsetY } = event;
     this.addBall( offsetX, offsetY );
+  }
+
+  moveBalls() {
+    this.allBalls
+      .filter( b => b.isMoving() )
+      .forEach( b => b.move() );
   }
 }
