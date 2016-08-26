@@ -1,0 +1,13 @@
+.world-view {
+  background-color: #fcfcfc;
+  width: 1000px;
+  height: 400px;
+  border: 1px solid #000;
+}
+
+.ball {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hcHAuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMEJBQTBCO0VBQzFCLGNBQWM7RUFDZCxjQUFjO0VBQ2QsdUJBQXVCO0NBQ3hCOztBQUVEO0VBQ0Usb0NBQTRCO0VBQTVCLDRCQUE0QjtDQUM3QiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndvcmxkLXZpZXcge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmNmY2ZjO1xuICB3aWR0aDogMTAwMHB4O1xuICBoZWlnaHQ6IDQwMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMDAwO1xufVxuXG4uYmFsbCB7XG4gIHRyYW5zaXRpb246IGFsbCAwLjJzIGxpbmVhcjtcbn1cbiJdfQ== */

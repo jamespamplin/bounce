@@ -67,8 +67,6 @@ var slicedToArray = function () {
 }();
 
 /*global document */
-//     
-
 var SVG_NS = 'http://www.w3.org/2000/svg';
 
 // Hardcoded radius for now
@@ -182,7 +180,6 @@ function setCirclePosition(circleElement, x, y) {
   circleElement.setAttribute('cy', y.toString());
 }
 
-//     
 /*global window*/
 
 var WorldView = function () {
@@ -226,8 +223,6 @@ var WorldView = function () {
   }]);
   return WorldView;
 }();
-
-//     
 
 function initialise(elem) {
   new WorldView(elem);
